@@ -284,8 +284,8 @@ namespace fileChecker
                     // get the file attributes for file or directory
                     FileAttributes attr = File.GetAttributes(e.FullPath);
 
-                    MailMessage mail = new MailMessage { From = new MailAddress("msemerciii@gmail.com", "fileChecker") };
-                    mail.To.Add("mehmet.semerci@metu.edu.tr");
+                    MailMessage mail = new MailMessage { From = new MailAddress("mailadress", "fileChecker") };
+                    mail.To.Add("mailadress");
                     mail.Subject = "Dosya Takip Sistemi Uyarısı";
                     SmtpClient client = new SmtpClient("smtp.gmail.com");
 
@@ -331,7 +331,7 @@ namespace fileChecker
                         }
                     }
                     client.Port = 587;
-                    client.Credentials = new System.Net.NetworkCredential("msemerciii@gmail.com", "Ticaret1");
+                    client.Credentials = new System.Net.NetworkCredential("mailadress", "password");
                     client.EnableSsl = true;
                     client.Timeout = 4000;
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
